@@ -37,7 +37,7 @@ $settings = array();
 require_once($root.'lib/functions.php');
 require_once($root.'lib/error.php');
 require_once($root.'lib/db/db.php');
-require_once($root.'lib/db/sqlite.php');
+require_once($root.'lib/db/mysqli.php');
 
 /* csrf token protection */
 $settings['csrf'] = csrf_protect();
@@ -46,12 +46,12 @@ if( empty( $settings['csrf'] ) ) exit;
 /* Max uploaded file size */
 $max_file_size = get_max_fileupload_size();
 
-if (!extension_loaded('sqlite3')) {
-  echo "SqLite3 module not loaded";
-  throw new Error("SqLite3 module not loaded");
+if (!extension_loaded('mysqli')) {
+  echo "mysqli module not loaded";
+  throw new Error("mysqli module not loaded");
 }
 
-$db = new SQLITE_DB($sqlite_path);
+$db = new MySQLi_DB($srv, $login, $pasw, $db);
 $db->connect();
 
 if((bool)$short) return;
