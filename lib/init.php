@@ -10,6 +10,12 @@ $debug = 0;
 /* Path to sqlite database */
 $sqlite_path = $root."data/cash.db3";
 
+/*MySQL settings */
+$srv = "127.0.0.1";
+$login = %login% 
+$pasw = %password%
+$db = %db_name%
+
 /* Time without actions */
 $life_time = ini_get("session.gc_maxlifetime");
 
