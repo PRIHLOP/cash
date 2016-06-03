@@ -11,7 +11,7 @@ $debug = 0;
 $sqlite_path = $root."data/cash.db3";
 
 /*MySQL settings */
-$srv = "127.0.0.1";
+$srv = "localhost";
 $login = %login% 
 $pasw = %password%
 $db = %db_name%
