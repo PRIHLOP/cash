@@ -1,11 +1,11 @@
 <?php
-error_reporting(0);
+error_reporting(1);
 
 /* Root dir */
 $root = dirname(__FILE__)."/../";
 
 /* Debug mode */
-$debug = 0;
+$debug = 1;
 
 /* Path to sqlite database */
 $sqlite_path = $root."data/cash.db3";
