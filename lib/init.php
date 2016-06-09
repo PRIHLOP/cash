@@ -43,6 +43,7 @@ $settings = array();
 require_once($root.'lib/functions.php');
 require_once($root.'lib/error.php');
 require_once($root.'lib/db/db.php');
+require_once($root.'lib/db/FileCacheDB.php');
 require_once($root.'lib/db/mysqli.php');
 
 /* csrf token protection */
@@ -57,7 +58,7 @@ if (!extension_loaded('mysqli')) {
   throw new Error("mysqli module not loaded");
 }
 
-$db = new MySQLi_DB($srv, $login, $pasw, $db);
+$db = new MySQLi_DB(null, $srv, $db, $login, $pasw);
 $db->connect();
 
 if((bool)$short) return;
