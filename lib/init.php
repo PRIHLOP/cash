@@ -11,10 +11,10 @@ $debug = 1;
 $sqlite_path = $root."data/cash.db3";
 
 /*MySQL settings */
-$srv = "localhost";
-$login = %login% 
-$pasw = %password%
-$db = %db_name%
+$sqlsrv = "localhost";
+$slogin = "login";
+$spasw = "password";
+$sdb = "db_name";
 
 /* Time without actions */
 $life_time = ini_get("session.gc_maxlifetime");
@@ -58,7 +58,7 @@ if (!extension_loaded('mysqli')) {
   throw new Error("mysqli module not loaded");
 }
 
-$db = new MySQLi_DB(null, $srv, $db, $login, $pasw);
+$db = new MySQLi_DB(null, $sqlsrv, $sdb, $slogin, $spasw);
 $db->connect();
 
 if((bool)$short) return;
