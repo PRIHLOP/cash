@@ -58,7 +58,7 @@ if (!extension_loaded('mysqli')) {
   throw new Error("mysqli module not loaded");
 }
 
-$db = new MySQLi_DB(null, $sqlsrv, $sdb, $slogin, $spasw);
+$db = new MySQLi_DB($sqlsrv, $sdb, $slogin, $spasw);
 $db->connect();
 
 if((bool)$short) return;
