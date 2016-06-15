@@ -1,8 +1,8 @@
 <?
 class MySQLi_DB extends FileCacheDB {
 
-  public function try_connect($srv, $login, $pasw, $db) {
-    return new mysqli($srv, $login, $pasw, $db);
+  public function try_connect($sqlsrv, $slogin, $spasw, $sdb) {
+    return new mysqli($sqlsrv, $slogin, $spasw, $sdb);
   }
 
   public function after_connect() {
